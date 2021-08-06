@@ -1,0 +1,106 @@
+Index: regression/finance_regression.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#!/usr/bin/python\r\n\r\n\"\"\"\r\n    Starter code for the regression mini-project.\r\n    \r\n    Loads up/formats a modified version of the dataset\r\n    (why modified?  we've removed some trouble points\r\n    that you'll find yourself in the outliers mini-project).\r\n\r\n    Draws a little scatterplot of the training/testing data\r\n\r\n    You fill in the regression code where indicated:\r\n\"\"\"    \r\n\r\n\r\nimport sys\r\nimport pickle\r\nsys.path.append(\"../tools/\")\r\nfrom feature_format import featureFormat, targetFeatureSplit\r\ndictionary = pickle.load( open(\"../final_project/final_project_dataset_modified.pkl\", \"r\") )\r\n\r\n### list the features you want to look at--first item in the \r\n### list will be the \"target\" feature\r\nfeatures_list = [\"bonus\", \"salary\"]\r\ndata = featureFormat( dictionary, features_list, remove_any_zeroes=True)\r\ntarget, features = targetFeatureSplit( data )\r\n\r\n### training-testing split needed in regression, just like classification\r\nfrom sklearn.cross_validation import train_test_split\r\nfeature_train, feature_test, target_train, target_test = train_test_split(features, target, test_size=0.5, random_state=42)\r\ntrain_color = \"b\"\r\ntest_color = \"b\"\r\n\r\n\r\n\r\n### Your regression goes here!\r\n### Please name it reg, so that the plotting code below picks it up and \r\n### plots it correctly. Don't forget to change the test_color above from \"b\" to\r\n### \"r\" to differentiate training points from test points.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n### draw the scatterplot, with color-coded training and testing points\r\nimport matplotlib.pyplot as plt\r\nfor feature, target in zip(feature_test, target_test):\r\n    plt.scatter( feature, target, color=test_color ) \r\nfor feature, target in zip(feature_train, target_train):\r\n    plt.scatter( feature, target, color=train_color ) \r\n\r\n### labels for the legend\r\nplt.scatter(feature_test[0], target_test[0], color=test_color, label=\"test\")\r\nplt.scatter(feature_test[0], target_test[0], color=train_color, label=\"train\")\r\n\r\n\r\n\r\n### draw the regression line, once it's coded\r\ntry:\r\n    plt.plot( feature_test, reg.predict(feature_test) )\r\n    reg.fit(feature_test, target_test)\r\n    print(\"feature_test slope: {}\".format(reg.coef_))\r\n    plt.plot(feature_train, reg.predict(feature_train), color=\"r\")\r\nexcept NameError:\r\n    pass\r\nplt.xlabel(features_list[1])\r\nplt.ylabel(features_list[0])\r\nplt.legend()\r\nplt.show()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/regression/finance_regression.py b/regression/finance_regression.py
+--- a/regression/finance_regression.py	(revision 0e0f1a2dc9cb2da2a52ddb2f5f896ab268688e46)
++++ b/regression/finance_regression.py	(date 1628178995518)
+@@ -29,8 +29,7 @@
+ from sklearn.cross_validation import train_test_split
+ feature_train, feature_test, target_train, target_test = train_test_split(features, target, test_size=0.5, random_state=42)
+ train_color = "b"
+-test_color = "b"
+-
++test_color = "r"
+ 
+ 
+ ### Your regression goes here!
+Index: svm/svm_author_id.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#!/usr/bin/python\r\n\r\n\"\"\" \r\n    This is the code to accompany the Lesson 2 (SVM) mini-project.\r\n\r\n    Use a SVM to identify emails from the Enron corpus by their authors:    \r\n    Sara has label 0\r\n    Chris has label 1\r\n\"\"\"\r\n    \r\nimport sys\r\nfrom time import time\r\nsys.path.append(\"../tools/\")\r\nfrom email_preprocess import preprocess\r\n\r\n\r\n### features_train and features_test are the features for the training\r\n### and testing datasets, respectively\r\n### labels_train and labels_test are the corresponding item labels\r\nfeatures_train, features_test, labels_train, labels_test = preprocess()\r\n\r\n#features_train = features_train[:len(features_train)/100]\r\n#labels_train = labels_train[:len(labels_train)/100]\r\n\r\n#########################################################\r\n### your code goes here ###\r\n\r\n#########################################################\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/svm/svm_author_id.py b/svm/svm_author_id.py
+--- a/svm/svm_author_id.py	(revision 0e0f1a2dc9cb2da2a52ddb2f5f896ab268688e46)
++++ b/svm/svm_author_id.py	(date 1626339537854)
+@@ -24,7 +24,22 @@
+ 
+ #########################################################
+ ### your code goes here ###
++from sklearn import svm
++
++clf = svm.SVC(kernel="rbf",C=10000.0)
++clf.fit(features_train,labels_train)
+ 
++pred = clf.predict(features_test)
++
++print(pred[10])
++print(pred[26])
++print(pred[50])
++
++print(sum([i==1 for i in pred]))
++
++from sklearn.metrics import accuracy_score
++
++print("accuracy:{}".format(accuracy_score(pred,labels_test)))
+ #########################################################
+ 
+ 
+Index: decision_tree/dt_author_id.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#!/usr/bin/python\r\n\r\n\"\"\" \r\n    This is the code to accompany the Lesson 3 (decision tree) mini-project.\r\n\r\n    Use a Decision Tree to identify emails from the Enron corpus by author:    \r\n    Sara has label 0\r\n    Chris has label 1\r\n\"\"\"\r\n    \r\nimport sys\r\nfrom time import time\r\nsys.path.append(\"../tools/\")\r\nfrom email_preprocess import preprocess\r\n\r\n\r\n### features_train and features_test are the features for the training\r\n### and testing datasets, respectively\r\n### labels_train and labels_test are the corresponding item labels\r\nfeatures_train, features_test, labels_train, labels_test = preprocess()\r\n\r\n\r\n\r\n\r\n#########################################################\r\n### your code goes here ###\r\n\r\n\r\n#########################################################\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/decision_tree/dt_author_id.py b/decision_tree/dt_author_id.py
+--- a/decision_tree/dt_author_id.py	(revision 0e0f1a2dc9cb2da2a52ddb2f5f896ab268688e46)
++++ b/decision_tree/dt_author_id.py	(date 1626850162599)
+@@ -24,7 +24,14 @@
+ 
+ #########################################################
+ ### your code goes here ###
++from sklearn import tree
++
++clf = tree.DecisionTreeClassifier(min_samples_split=40)
++clf.fit(features_train,labels_train)
+ 
++print(clf.score(features_test,labels_test))
++
++#print (len(features_test[0]))
+ 
+ #########################################################
+ 
+Index: choose_your_own/your_algorithm.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#!/usr/bin/python\r\n\r\nimport matplotlib.pyplot as plt\r\nfrom prep_terrain_data import makeTerrainData\r\nfrom class_vis import prettyPicture\r\n\r\nfeatures_train, labels_train, features_test, labels_test = makeTerrainData()\r\n\r\n\r\n### the training data (features_train, labels_train) have both \"fast\" and \"slow\"\r\n### points mixed together--separate them so we can give them different colors\r\n### in the scatterplot and identify them visually\r\ngrade_fast = [features_train[ii][0] for ii in range(0, len(features_train)) if labels_train[ii]==0]\r\nbumpy_fast = [features_train[ii][1] for ii in range(0, len(features_train)) if labels_train[ii]==0]\r\ngrade_slow = [features_train[ii][0] for ii in range(0, len(features_train)) if labels_train[ii]==1]\r\nbumpy_slow = [features_train[ii][1] for ii in range(0, len(features_train)) if labels_train[ii]==1]\r\n\r\n\r\n#### initial visualization\r\nplt.xlim(0.0, 1.0)\r\nplt.ylim(0.0, 1.0)\r\nplt.scatter(bumpy_fast, grade_fast, color = \"b\", label=\"fast\")\r\nplt.scatter(grade_slow, bumpy_slow, color = \"r\", label=\"slow\")\r\nplt.legend()\r\nplt.xlabel(\"bumpiness\")\r\nplt.ylabel(\"grade\")\r\nplt.show()\r\n################################################################################\r\n\r\n\r\n### your code here!  name your classifier object clf if you want the \r\n### visualization code (prettyPicture) to show you the decision boundary\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\ntry:\r\n    prettyPicture(clf, features_test, labels_test)\r\nexcept NameError:\r\n    pass\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/choose_your_own/your_algorithm.py b/choose_your_own/your_algorithm.py
+--- a/choose_your_own/your_algorithm.py	(revision 0e0f1a2dc9cb2da2a52ddb2f5f896ab268688e46)
++++ b/choose_your_own/your_algorithm.py	(date 1626851888553)
+@@ -31,13 +31,11 @@
+ ### your code here!  name your classifier object clf if you want the 
+ ### visualization code (prettyPicture) to show you the decision boundary
+ 
+-
+-
+-
+-
++from sklearn.ensemble import RandomForestClassifier
++clf = RandomForestClassifier(random_state=0,min_samples_split=95)
++clf.fit(features_train, labels_train)
+ 
+-
+-
++print clf.score(features_test,labels_test)
+ try:
+     prettyPicture(clf, features_test, labels_test)
+ except NameError:
