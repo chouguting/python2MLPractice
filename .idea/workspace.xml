@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7a9f99f-e45f-434b-ace4-0af746c1dec1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python2MLPractice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python2MLPractice.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k_means/clusters.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/k_means/clusters.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k_means/k_means_cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/k_means/k_means_cluster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_learning/vectorize_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_learning/vectorize_text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/parse_out_email_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/parse_out_email_text.py" afterDir="false" />
     </list>
     <list id="f0333bc7-6891-4a0a-9466-6a4ec915af65" name="Changes by chang" comment="">
       <change beforePath="$PROJECT_DIR$/k_means/k_means_cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/k_means/k_means_cluster.py" afterDir="false" />
     </list>
-    <list id="29808373-767b-483b-8854-04d80b61d45e" name="Changes by d4050" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,17 +27,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/k_means/k_means_cluster.py">
-      <ranges>
-        <range start1="67" end1="67" start2="67" end2="71" changelist="f0333bc7-6891-4a0a-9466-6a4ec915af65" />
-        <range start1="68" end1="68" start2="72" end2="85" changelist="c7a9f99f-e45f-434b-ace4-0af746c1dec1" />
-        <range start1="69" end1="69" start2="86" end2="89" changelist="c7a9f99f-e45f-434b-ace4-0af746c1dec1" />
-        <range start1="70" end1="70" start2="90" end2="101" changelist="c7a9f99f-e45f-434b-ace4-0af746c1dec1" />
-        <range start1="71" end1="71" start2="102" end2="108" changelist="c7a9f99f-e45f-434b-ace4-0af746c1dec1" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1wXJVKu3dEa9acDxoTAsvfhBYkh" />
   <component name="ProjectViewState">
@@ -56,7 +43,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.k_means_cluster">
+  <component name="RunManager" selected="Python.vectorize_text">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="python2MLPractice" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +82,25 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/k_means/k_means_cluster.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="parse_out_email_text" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python2MLPractice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/parse_out_email_text.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -145,10 +151,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="vectorize_text" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python2MLPractice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/text_learning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/text_learning/vectorize_text.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.k_means_cluster" />
+        <item itemvalue="Python.vectorize_text" />
+        <item itemvalue="Python.parse_out_email_text" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.k_means_cluster" />
         <item itemvalue="Python.svm_author_id" />
       </list>
     </recent_temporary>
@@ -162,7 +189,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628599023545</updated>
       <workItem from="1628599024765" duration="4952000" />
-      <workItem from="1628658197299" duration="2286000" />
+      <workItem from="1628658197299" duration="7224000" />
     </task>
     <task id="LOCAL-00001" summary="add k means">
       <created>1628609568248</created>
@@ -171,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628609568248</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add k means">
+      <created>1628662527678</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1628662527678</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,12 +223,18 @@
           <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tools/parse_out_email_text.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python2MLPractice$svm_author_id.coverage" NAME="svm_author_id Coverage Results" MODIFIED="1628604944050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/svm" />
-    <SUITE FILE_PATH="coverage/python2MLPractice$test.coverage" NAME="test Coverage Results" MODIFIED="1628659831558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python2MLPractice$k_means_cluster.coverage" NAME="k_means_cluster Coverage Results" MODIFIED="1628662330699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/k_means" />
+    <SUITE FILE_PATH="coverage/python2MLPractice$vectorize_text.coverage" NAME="vectorize_text Coverage Results" MODIFIED="1628670163101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/text_learning" />
+    <SUITE FILE_PATH="coverage/python2MLPractice$test.coverage" NAME="test Coverage Results" MODIFIED="1628669775885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python2MLPractice$k_means_cluster.coverage" NAME="k_means_cluster Coverage Results" MODIFIED="1628662503573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/k_means" />
   </component>
 </project>

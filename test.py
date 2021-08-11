@@ -19,3 +19,8 @@ def featureScaling(arr):
 data = [115, 140, 175]
 arr= featureScaling(data)
 print arr
+str="aaa bb CCC"
+str=str.replace("aaa","")
+print str
+str=str.strip()
+print str

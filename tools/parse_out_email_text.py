@@ -29,11 +29,21 @@ def parseOutText(f):
 
         ### project part 2: comment out the line below
         words = text_string
+        #stemmer = SnowballStemmer("english")
+        #stemmed_words = map(lambda w: stemmer.stem(w), text_string.split())
+        #words = ' '.join(stemmed_words)
 
+        stemmer=SnowballStemmer("english")
         ### split the text string into individual words, stem each word,
         ### and append the stemmed word to words (make sure there's a single
         ### space between each stemmed word)
-        
+        wordsList=text_string.split()
+        words=""
+        for word in wordsList:
+            if(stemmer.stem(word)==""):
+                continue;
+            words+=stemmer.stem(word)
+            words+=" "
 
 
 
