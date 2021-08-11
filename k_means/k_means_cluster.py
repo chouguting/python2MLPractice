@@ -66,9 +66,43 @@ plt.show()
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
 
+salary_data = [[i['salary']] for i in data_dict.values() if i['salary'] != 'NaN']
+exercised_stock_options_data = [[i['exercised_stock_options']] for i in data_dict.values() if i['exercised_stock_options'] != 'NaN']
+
+'''
+for i in data_dict.values():
+    if(i['salary'] != 'NaN'):
+        salary_data.append(i['salary'])
+    if(i['exercised_stock_options'] != 'NaN'):
+        exercised_stock_options_data.append(i['exercised_stock_options'])
+'''
+from sklearn.preprocessing import MinMaxScaler
+scaler_salary = MinMaxScaler()
+scaler_salary.fit(salary_data)
+print scaler_salary.transform([[200000.]])
+
+scaler_exercised_stock_options = MinMaxScaler()
+scaler_exercised_stock_options.fit(exercised_stock_options_data)
+print scaler_exercised_stock_options.transform([[1000000.]])
+
+'''
+min_salary = sys.max
+max_salary = -sys.maxint - 1
+for i in data_dict.values():
+    if(i['salary'] != 'NaN'):
+        if(i['salary'] < min_salary):
+            min_salary = i['salary']
+        elif(i['salary'] > max_salary):
+            max_salary = i['salary']
+print(min_salary,max_salary)
+'''
 
 
-
+#abc = numpy.array()
+abc = [i['salary'] for i in data_dict.values()if i['salary'] != 'NaN']
+print abc
+abc = [i['salary'] for i in data_dict.values()]
+print abc
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
 try:
